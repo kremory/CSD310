@@ -12,18 +12,21 @@ cursor=db.cursor()
 query = "SELECT _revenue, bussiness_name, _address FROM business"
 cursor.execute(query)
 businesses=cursor.fetchall()
+
 print("\n-- DISPLAYING BUSINESS RECORDS --")
 for business in businesses:
     print(" Revenue: {}\n Bussiness Name and Year: {} \n Address:  {}".format(business[0], business[1], business[2]))
 query = "SELECT employee_id, first_name, last_name,job_code,_salary FROM employee"
 cursor.execute(query)
 employees=cursor.fetchall()
+
 print( "\n-- DISPLAING EMPLOYEE RECORDS --")
 for employee in employees:
     print(" Employee ID: {}\n First Name: {} \n Last Name:  {}\n Job Code:  {}\n Salary:   {}".format(employee[0], employee[1], employee[2], employee[3], employee[4]))
 query = "SELECT job_code, _functions, _title FROM roles"
 cursor.execute(query)
 roley=cursor.fetchall()
+
 print("\n-- DISPLAYING ROLES--")
 for roles in roley:
     print(" Job Code: {}\n Functions: {} \n Title:  {}".format(roles[0], roles[1], roles[2]))
@@ -36,6 +39,7 @@ for clients in clientt:
 query = "SELECT _value, _name, _code,client_id FROM transactions"
 cursor.execute(query)
 trans=cursor.fetchall()
+
 print("\n-- DISPLAYING TRANSACTIONS--")
 for transactions in trans:
     print(" Value: {}\n Name: {} \n Code:  {},\n Client ID:   {}".format(transactions[0], transactions[1], transactions[2],transactions[3]))
